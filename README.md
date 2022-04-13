@@ -11,4 +11,4 @@ Login page:![logger](https://user-images.githubusercontent.com/102311426/1632496
 
 Add/Edit movie page: When logged, the user is enabled to add/edit/delete movies in the database![edit](https://user-images.githubusercontent.com/102311426/163249643-9394aa20-29cf-4da4-bc97-4e02c7b96301.png)
 
-Movie page: Users can add comments and rate the movie![movie](https://user-images.githubusercontent.com/102311426/163250821-e8670928-6024-43f0-9adb-e45b86b39aca.png)
+Movie page: Users can leave comments and rate the movie![movie](https://user-images.githubusercontent.com/102311426/163250821-e8670928-6024-43f0-9adb-e45b86b39aca.png)
