@@ -1,0 +1,119 @@
+#movie-presentation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 50px;
+}
+
+#movie-description{
+  width: 60%;
+}
+
+#poster{
+  box-shadow: 10px 10px 5px #111111;
+  height: auto;
+
+  img{
+    height: 420px;
+    width: 310px;
+  }
+}
+
+#title{
+  font-weight: bold;
+}
+
+#comments{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#add-comment-form{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+
+  input{
+    width: 100%;
+    background-color: #343434;
+    color: white;
+    border: #343434;
+    padding: 5px;
+  }
+}
+
+#comment-area{
+  width: 100%;
+  background-color: #343434;
+  color: white;
+  border: #343434;
+  height: 100px;
+  resize: none;
+}
+
+h3{
+  margin-left: 7.5%;
+}
+
+label{
+  margin-top:20px;
+}
+
+#user-infos{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100%;
+  justify-content: space-between;
+}
+
+.btn-main{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #a6a6a6;
+  border: none;
+  background-color: #4b4b4b;
+  width: 200px;
+  letter-spacing: 0.1em;
+  padding: 10px;
+
+  &:hover{
+    color: white;
+  }
+}
+
+.input-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.small-input{
+  width: 49%;
+}
+
+.comment{
+  width: 70%;
+  margin: 50px auto;
+}
+
+.comment-header{
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  align-items: baseline;
+}
+
+.nickname{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.date{
+  color: #b6b6b6;
+}
+
+#date{
+  font-size: 25px;
+}

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Licorice&family=Oswald:wght@300;600&family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Permanent+Marker&display=swap');
+$main-color: #8a1515 !default;
+
+
+html{
+  height: 100%;
+}
+
+body{
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  background-color: #1e1e1e;
+  margin: 0;
+}
+
+#main-wrapper{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  background-color: #343434;
+  padding: 20px;
+  z-index: 2;
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  width: 100%;
+
+  a{
+    color: #de0000;
+    text-decoration: none;
+    padding: 10px;
+
+    &:hover{
+      color: scale-color(#de0000, $lightness: 20%);
+    }
+  }
+}
+
+#logo{
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+#log-btn{
+  margin-left: auto;
+  margin-right: 0;
+
+  svg{
+    width: 30px;
+    height: 30px;
+  }
+}
+
+#main-title{
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+footer{
+  position: relative;
+  top: 0;
+  background-color: #343434;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+
+  p{
+    transform: translateY(25%);
+  }
+}
+
+@import "stylesheets/edition";
+@import "stylesheets/elements";
+@import "stylesheets/index";
+@import "stylesheets/logger";
+@import "stylesheets/movie";
+@import "stylesheets/movies";
+@import "stylesheets/stars";

@@ -1,0 +1,99 @@
+.create-form{
+  width: 50%;
+  min-height: 100%;
+  padding: 0 50px;
+  background: $main-color;
+  box-shadow: 10px 5px 5px #0e0e0e;
+
+  input, textarea{
+    background: #1e1e1e;
+    color: white;
+    border: none;
+    width: 100%;
+  }
+
+  textarea{
+    height: 200px;
+    resize: none;
+  }
+
+  input::placeholder, textarea::placeholder{
+    color: #b2b2b2;
+  }
+
+  input[type=date]::-webkit-datetime-edit-fields-wrapper {
+    color: #b2b2b2;
+  }
+
+  input[type=date]::-webkit-calendar-picker-indicator{
+    filter: invert(1);
+  }
+
+  input[type=file]::-webkit-file-upload-button{
+    background: #ab0101;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  button{
+    background: #1e1e1e;
+  }
+}
+
+#add-movie-page{
+  display: flex;
+  flex-direction: row;
+  min-height: 100%;
+}
+
+#card-preview{
+  margin: 150px auto;
+  height: 528px;
+  box-shadow: 0 0 20px black;
+  cursor: initial;
+}
+
+.creation-error{
+  font-size: 20px;
+  margin-bottom: -30px;
+}
+
+#word-count{
+  align-self: flex-end;
+}
+
+.add-btn{
+  align-self: flex-end;
+}
+
+.edit-btn{
+  border: none;
+  border-radius: 3px;
+  background: $main-color;
+  color: white;
+  transition: 0.4s;
+
+  &:hover{
+    background: scale-color($main-color, $lightness: 20%);
+  }
+}
+
+#update-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.delete-btn{
+  width: 60%;
+  color: $main-color !important;
+}
+
+.confirm{
+  color: #00ff20;
+  text-align: center;
+  font-size: 20px;
+}
+
