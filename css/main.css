@@ -102,6 +102,7 @@ footer p{
 .vertical:hover{
     transform: scale(1.1);
     box-shadow: 0 0 20px 0 black;
+    z-index: 1;
 }
 
 .card-img-top{
@@ -568,7 +569,6 @@ fieldset input::placeholder{
     height: 100%;
 }
 
-
 #recently-added .card{
     height: 100px;
     width: auto;
@@ -762,6 +762,22 @@ fieldset input::placeholder{
     background: var(--main-color);
     padding: 10px;
 }
+
+@media screen and (max-width: 950px){
+    #recently-added{
+        display: none;
+    }
+    #best-rated-wrapper{
+        width: 100%;
+    }
+    #diaporama-header, #diaporama{
+        width: 80%;
+    }
+    #next-btn{
+        left: 90%;
+    }
+}
+
 /********************************** STAR RATING **********************************************************/
 
 .gold{

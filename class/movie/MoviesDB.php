@@ -20,8 +20,8 @@ class MoviesDB
 
     public function __construct(){
         try {
-            $dsn = 'mysql:dbname=movies;host=HOST;port=PORT';
-            $this->pdo = new PDO($dsn, "username", "password");
+            $dsn = 'mysql:dbname=movies;host=127.0.0.1;port=3306';
+            $this->pdo = new PDO($dsn, "root", "123");
         }
         catch(\Exception $e) {
             die("Erreur: " . $e->getMessage());
@@ -52,7 +52,7 @@ class MoviesDB
             WHEN 12 THEN 'Décembre'
             ELSE 'Date de sortie inconnue'
         END as fMonth 
-        FROM movie WHERE title LIKE '%$searchPattern%'";
+        FROM movie WHERE title LIKE :searchPattern";
 
             $value = "";
             if ($sort == "") $value = "movie_id DESC";
@@ -78,7 +78,7 @@ class MoviesDB
             WHEN 12 THEN 'Décembre'
             ELSE 'Date de sortie inconnue'
         END as fMonth 
-        FROM movie LEFT OUTER JOIN comments USING (movie_id) GROUP BY movie.movie_id ORDER BY movie_rating DESC, title";
+        FROM movie LEFT OUTER JOIN comments USING (movie_id) WHERE title LIKE :searchPattern GROUP BY movie.movie_id ORDER BY movie_rating DESC, title";
         }
 
         $values = $this->getPaginationValues($currentPage, $searchPattern);
@@ -86,6 +86,7 @@ class MoviesDB
         $query .= " LIMIT :first, :moviesPerPage";
         $statement = $this->pdo->prepare($query);
 
+        $statement->bindValue(':searchPattern', '%'.$searchPattern.'%');
         $statement->bindValue(':first', $values['first'], PDO::PARAM_INT);
         $statement->bindValue(':moviesPerPage', $values['movies_per_page'], PDO::PARAM_INT);
         $statement->execute() or die(var_dump($statement->errorInfo()));
@@ -412,8 +413,9 @@ class MoviesDB
      */
 
     public function getPaginationValues(int $currentPage, string $searchPattern=null): array{
-        $query = "SELECT COUNT(movie_id) AS nb_movies FROM movie WHERE title LIKE '%$searchPattern%'";
+        $query = "SELECT COUNT(movie_id) AS nb_movies FROM movie WHERE title LIKE :searchPattern";
         $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':searchPattern', '%'.$searchPattern.'%');
         $statement->execute() or die(var_dump($statement->errorInfo()));
         $results = $statement->fetch();
 

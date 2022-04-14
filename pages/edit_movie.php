@@ -4,7 +4,7 @@ Autoloader::register();
 use movie\Template;
 use movie\MoviesDB;
 $db = new MoviesDB();
-$movie = $db->getMovie($_GET['movie'])[0];
+$movie = $db->getMovie($_GET['movie']);
 session_start();
 ob_start(); ?>
 
