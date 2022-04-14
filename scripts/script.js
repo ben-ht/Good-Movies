@@ -29,7 +29,7 @@ function hover(){
     $('.poster-card').on('mouseenter', function(event){
         let i = 0;
         for (let e of extra) {
-            $(e).css({'left': event.pageX - 1665, 'top': event.pageY - 270 - 295 * i})
+            $(e).css({'left': event.pageX - window.innerWidth, 'top': event.pageY - 270 - 295 * i})
             i++
         }
     })

@@ -18,7 +18,7 @@ ob_start(); ?>
     </div>
 
     <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
             <?php if (isset($_GET['sort'])){
                 if ($_GET['sort'] == "rating") echo "Mieux notés";
                 if ($_GET['sort'] == "title") echo "A - Z";

@@ -91,7 +91,7 @@ class MoviesDB
         $statement->bindValue(':moviesPerPage', $values['movies_per_page'], PDO::PARAM_INT);
         $statement->execute() or die(var_dump($statement->errorInfo()));
         $results = $statement->fetchAll(PDO::FETCH_CLASS, "\movie\MovieRenderer"); ?>
-        <form id = "movies-wrapper" class = "select-movie" method ="get" action = "see_movie_details.php">
+        <form id = "movies-wrapper" class = "select-movie" method ="get" action = "movie.php">
         <?php foreach($results as $movie){
             $movie->getHTML();
         } ?>
